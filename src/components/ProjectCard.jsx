@@ -18,7 +18,7 @@ const ProjectCard = ({ Id, ProjectImage, Data}) => {
         <div className='flex justify-between items-center px-1'>
         <div>
             <h1 className='text-md font-medium'>{Data.projectName}</h1>
-            <p className='text-gray-600 text-sm'>{Data.ProjectDescription}</p>
+            <p className='text-gray-600 text-sm max-md:text-xs'>{Data.projectDescription}</p>
         </div>
             <button className='bg-slate-200 h-8 py-1 px-2 rounded-md hover:text-white hover:bg-black'>
                 <FiGithub size={20}/> 

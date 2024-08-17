@@ -3,7 +3,7 @@ import html from './html.svg'
 import css from './css.svg'
 import github from './github.svg'
 import chrome from './chrome.svg'
-import figma from './figma.svg'
+import figma from './figma.svg' 
 import git from './git.svg'
 import mysql from './mysql.svg'
 import node from './node.svg'
@@ -22,6 +22,9 @@ import c from './c.svg'
 import cplus from './c++.svg'
 import chash from './Logo_C_sharp.svg'
 import mail from './mail.svg'
+import facebook from './facebook.svg'
+import tiktok from './tiktok.svg'
+import instagram from './instagram.svg'
 
 export {
 javascript, 
@@ -47,5 +50,8 @@ eclipse,
 cplus,
 c,
 chash,
-mail
+mail,
+facebook,
+tiktok,
+instagram
 }

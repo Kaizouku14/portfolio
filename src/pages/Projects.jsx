@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { IoIosArrowDown,  IoIosArrowUp  } from "react-icons/io";
 import ProjectCard from '../components/ProjectCard';
-
+import { motion } from 'framer-motion';
 
 const projects = [
   { ProjectImage : 'https://www.hostinger.ph/tutorials/wp-content/uploads/sites/2/2020/06/Help-Scout_s-homepage.png',
@@ -52,11 +52,15 @@ const Projects = () => {
     <section id='projects' className='py-4 h-auto mx-[13rem] max-md:mx-[2rem]'>
       <div className='text-[2.5rem] font-bold my-10'>Projects<span className='text-sky-600 '>.</span></div>
     
-      <div className={`${seeMore ? 'h-auto' : 'h-[47rem]'} flex flex-wrap gap-y-10 justify-center overflow-hidden `} > 
+      <motion.div className={`${seeMore ? 'h-auto' : 'h-[47rem]'} flex flex-wrap gap-y-10 justify-center overflow-hidden `} 
+          initial={{ y: "15%", opacity : 0}}
+          whileInView={{ y: "0%", opacity: 1 }}  
+          transition={{ duration : 2}}
+       > 
           {projects.map((value,index) => (
               <ProjectCard key={index} ProjectImage={value.ProjectImage} Data={value.Data} />
           ))}
-      </div>
+      </motion.div>
 
         <div className='flex justify-center mt-2'>
           <button 

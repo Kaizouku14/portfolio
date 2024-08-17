@@ -7,11 +7,15 @@ const links = [
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" }
   ];
+
   const Footer = () => {
     return (
       <footer className='py-6 h-auto mx-[13rem] max-md:mx-[2rem] border-b max-w-screen-xl px-4 sm:px-6 mt-[5rem]'>
         <div className='flex flex-col md:flex-row justify-between items-center gap-4'>
-          <div className='text-xl font-bold text-sky-600'>My Portfolio</div>
+          <div className='text-xl font-bold text-sky-600 flex items-center'>
+            <img src="icon.png" alt="icon" height='auto' width='10%' />
+            <span>Manda</span>
+          </div>
           <nav>
             <motion.ol
               initial={{ y: "100%", opacity: 0 }}

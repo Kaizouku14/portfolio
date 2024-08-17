@@ -1,12 +1,12 @@
 import React from 'react'
-import { github, mail } from '../assets'
+import { facebook, github, instagram, mail, tiktok } from '../assets'
 
 const contact = [
   { image: mail, text: 'Send me an email: ', username: 'mandaalv72@gmail.com', url: 'https://mail.google.com/' },
   { image: github, text: 'My Github account: ', username: 'Kaizouku14', url: 'https://github.com/Kaizouku14' },
-  { image: mail, text: 'My TikTok account: ', username: '@itz.kallis', url: 'https://www.tiktok.com/@itz.kallis' },
-  { image: mail, text: 'My Instagram Account: ', username: '@zyalv.m', url: 'https://www.instagram.com/zyalv.m' },
-  { image: mail, text: 'My Facebook Account: ', username: 'Al-v Manda', url: 'https://www.facebook.com/alv.manda.3/' }
+  { image: tiktok, text: 'My TikTok account: ', username: '@itz.kallis', url: 'https://www.tiktok.com/@itz.kallis' },
+  { image: instagram, text: 'My Instagram Account: ', username: '@zyalv.m', url: 'https://www.instagram.com/zyalv.m' },
+  { image: facebook, text: 'My Facebook Account: ', username: 'Al-v Manda', url: 'https://www.facebook.com/alv.manda.3/' }
 ]
 
 const Contact = () => {

@@ -23,12 +23,13 @@ const Header = () => {
 
   return (
     <header className="h-20 flex justify-between items-center mx-[13rem] max-md:mx-[2rem]">
-      <motion.div className="text-xl text-sky-600"
-          initial={{ opacity: 0, x: "-50%" }} // Initial state when the element is hidden
-          whileInView={{ opacity: 1, x: "15%" }} // State when the element is in view
+      <motion.div className="text-xl font-bold text-sky-600 flex items-center"
+          initial={{ opacity: 0, x: "-15%" }} // Initial state when the element is hidden
+          whileInView={{ opacity: 1, x: "1%" }} // State when the element is in view
           transition={{ duration: 2}}
       >
-         My Portfolio
+        <img src="icon.png" alt="icon" height='auto' width='10%' />
+        <span>Manda</span>
       </motion.div>
       <nav>
          <motion.ol 
@@ -51,7 +52,7 @@ const Header = () => {
             transition={{ duration: 0.3 }}
             className={`${open ? 'fixed inset-0 text-sky-600 bg-opacity-75 flex items-center justify-center z-50' : 'hidden' }`}
           >
-            <div className="w-full max-w-3xl p-4 bg-[#daddd8] h-full md:h-auto relative">
+            <div className="w-full max-w-3xl p-4 bg-white h-full md:h-auto relative">
               <motion.button
                 className="text-sky-600 w-10 h-10 absolute right-4 top-7 focus:outline-none"
                 onClick={() => setOpen(!open)}

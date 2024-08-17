@@ -1,3 +1,3 @@
  # MY PORFOLIO
 
-``` No done yet ```
+``` Not done yet ```

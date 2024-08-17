@@ -40,7 +40,7 @@ const Home = () => {
               <span>
                A{' '} 
                <Typewriter
-                  words={['Web developer', 'Apprentice', 'Learner']}
+                  words={['Web developer', 'Apprentice', 'Learner', 'Student']}
                   loop={true}
                   cursor
                   cursorStyle='|'

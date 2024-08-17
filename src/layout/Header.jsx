@@ -22,18 +22,18 @@ const Header = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="h-20 flex justify-between items-center mx-[8rem] max-md:mx-[2rem]">
+    <header className="h-20 flex justify-between items-center mx-[13rem] max-md:mx-[2rem]">
       <motion.div className="text-xl text-sky-600"
-        initial={{ x: "-50%", opacity : 0}}
-        animate={{ x: "15%", opacity: 1 }}  
-        transition={{ duration : 2}}
+          initial={{ opacity: 0, x: "-50%" }} // Initial state when the element is hidden
+          whileInView={{ opacity: 1, x: "15%" }} // State when the element is in view
+          transition={{ duration: 2}}
       >
          My Portfolio
       </motion.div>
       <nav>
          <motion.ol 
            initial={{ y: "100%", opacity : 0}}
-           animate={{ y: "0%", opacity: 1 }}  
+           whileInView={{ y: "0%", opacity: 1 }}  
            transition={{ duration : 2}}
            className="text-white flex justify-evenly w-96 max-md:hidden">
 

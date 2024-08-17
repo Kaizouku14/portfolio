@@ -1,43 +1,115 @@
 import { motion } from "framer-motion"
-import { Link } from "react-router-dom"
+import React, { useState } from 'react'
+
+const links = [
+  { name: "Home", href: "#home" },
+  { name: "Skills", href: "#skills" },
+  { name: "Projects", href: "#projects" },
+  { name: "Contact", href: "#contact" }
+];
+
+const menuVariants = {
+  open: { opacity: 1, scale: 1 },
+  closed: { opacity: 0, scale: 0.9 }
+};
+
+const buttonVariants = {
+  open: { rotate: 45 },
+  closed: { rotate: 0 }
+};
 
 const Header = () => {
+  const [open, setOpen] = useState(false);
+
   return (
-    <header className="h-20 flex justify-between items-center mx-4 px-6">
-      <motion.div className="text-lg text-sky-600"
+    <header className="h-20 flex justify-between items-center mx-[8rem] max-md:mx-[2rem]">
+      <motion.div className="text-xl text-sky-600"
         initial={{ x: "-50%", opacity : 0}}
         animate={{ x: "15%", opacity: 1 }}  
-        transition={{ duration : 1.5}}
+        transition={{ duration : 2}}
       >
          My Portfolio
       </motion.div>
       <nav>
-         <ol className="text-white flex justify-evenly w-96">
-            <li>
-              <Link className="group text-sky-600 transition duration-300" to="/">Home
-                <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"
+         <motion.ol 
+           initial={{ y: "100%", opacity : 0}}
+           animate={{ y: "0%", opacity: 1 }}  
+           transition={{ duration : 2}}
+           className="text-white flex justify-evenly w-96 max-md:hidden">
+
+            {links.map((value, index) => (
+              <a key={index} className="group text-sky-600 transition duration-300 cursor-pointer" href={value.href} >{value.name}
+                <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"
                 ></span>
-              </Link>
-            </li>
-            <li>
-              <Link className="group text-sky-600 transition duration-300" to="/about">About
-                <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"
-                ></span>
-              </Link>
-            </li>
-            <li>
-            <Link className="group text-sky-600 transition duration-300" to="/projects">Projects
-                <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"
-                ></span>
-              </Link>
-            </li>
-            <li>
-              <Link className="group text-sky-600 transition duration-300" to="/contact">Contact
-                <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"
-                ></span>
-              </Link>
-            </li>
-         </ol>  
+              </a>
+            ))}         
+         </motion.ol>  
+
+         <motion.div
+            animate={open ? "open" : "closed"}
+            variants={menuVariants}
+            transition={{ duration: 0.3 }}
+            className={`${open ? 'fixed inset-0 text-sky-600 bg-opacity-75 flex items-center justify-center z-50' : 'hidden' }`}
+          >
+            <div className="w-full max-w-3xl p-4 bg-[#daddd8] h-full md:h-auto relative">
+              <motion.button
+                className="text-sky-600 w-10 h-10 absolute right-4 top-7 focus:outline-none"
+                onClick={() => setOpen(!open)}
+                variants={buttonVariants}
+                transition={{ duration: 0.3 }}
+              >
+                <span className="sr-only">Close menu</span>
+                <div className="block w-5 relative">
+                  <span
+                    aria-hidden="true"
+                    className={`block absolute h-0.5 w-5 bg-current rota transform transition duration-500 ease-in-out ${open ? 'rotate-90' : '-translate-y-1.5'}`}
+                  />
+                  <span
+                    aria-hidden="true"
+                    className={`block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out ${open ? 'opacity-0' : ''}`}
+                  />
+                  <span
+                    aria-hidden="true"
+                    className={`block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out ${open ? '-rotate-1' : 'translate-y-1.5'}`}
+                  />
+                </div>
+              </motion.button>
+
+              <ul className="flex flex-col justify-center items-center space-y-6 mt-20">
+                {links.map((value, index) => (
+                  <a key={index} 
+                        className="group text-sky-600 transition duration-300" 
+                        href={value.href}
+                        onClick={() => setOpen(!open)}
+                  >
+                    {value.name}
+                    <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
+                  </a>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
+
+        <motion.button 
+             initial={{ x: "100%", opacity : 0}}
+             animate={{ x: "0%", opacity: 1 }}  
+             transition={{ duration : 2}}
+             className="hidden max-md:block text-sky-600 w-10 h-10 relative focus:outline-none"
+              onClick={() => setOpen(!open)}
+            >
+            <span className="sr-only">Open main menu</span>
+            <div className="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <span aria-hidden="true"
+                    className={`block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out ${open ? 'rotate-45' : '-translate-y-1.5'}`}
+              />
+              <span aria-hidden="true"
+                    className={`block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out ${open ? 'opacity-0' : ''}`}
+              />
+              <span aria-hidden="true"
+                  className={`block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out ${open ? '-rotate-45' : 'translate-y-1.5'}`}
+              />
+            </div>
+        </motion.button>    
       </nav> 
     </header>
   )

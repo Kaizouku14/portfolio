@@ -1,54 +1,86 @@
 import React from 'react'
-import Header from '../components/Header'
 import { splitStringUsingRegex } from '../utils/splitStringUsingRegex'
 import { motion } from 'framer-motion'
+import { Typewriter } from 'react-simple-typewriter';
+import { FiGithub } from "react-icons/fi";
+import { BiMessageSquareDetail } from "react-icons/bi";
 
 
-const name = "Hello I'm Al-v Manda"
+const name = "Hello I'm Al-v Manda";
 const description = "A third-year BSIT student diving into the depths of web development to broaden my knowledge and skills in web development."
 
 const charVariants = {
   hidden : { opacity : 0},
   reveal : { opacity : 1}
 }
- const Home = () => {
+
+const Home = () => {
    const nameChar = splitStringUsingRegex(name);
-   const descriptionChar = splitStringUsingRegex(description)
+   const descriptionChar = splitStringUsingRegex(description);
 
   return (
-    <main>
-      <Header/>
-      <div className='h-[26rem] flex items-center justify-center'>
-        <div className='h-38 w-96 flex flex-col items-center gap-y-2 '>
+    <section id='home'> 
+      <div className='h-[30rem] flex items-center justify-center'>
+        <div className='h-38 flex flex-col items-center gap-y-2 '>
+
           <div className='text-center'>
             <motion.div 
               initial='hidden' 
               whileInView="reveal" 
               transition={{ staggerChildren : 0.02 }}
-              className='text-4xl font-medium text-sky-600'
+              className='text-5xl font-bold text-sky-600'
               >{nameChar.map((char,index) => (
               <motion.span key={index} variants={charVariants} transition={{ duration : 0.5}} >
                  {char}
               </motion.span>
               ))}
             </motion.div>
-            <span className='text-sky-800 text-lg'>A web developer</span>
-          </div>
-          <motion.div 
-            initial='hidden' 
-            whileInView="reveal" 
-            transition={{ staggerChildren : 0.02 }}
-            className='text-xs text-center'
-            >{descriptionChar.map((char,index) => (
-              <motion.span key={index} variants={charVariants} transition={{ duration : 0.5}} >
-                 {char}
-              </motion.span>
-            ))}
-          </motion.div>
 
+            <div className='text-sky-800 text-xl font-medium'>
+              <span>
+               A{' '} 
+               <Typewriter
+                  words={['Web developer', 'Apprentice', 'Learner']}
+                  loop={true}
+                  cursor
+                  cursorStyle='|'
+                  typeSpeed={70}
+                  deleteSpeed={50}
+                  delaySpeed={1000}
+                />
+              </span>
+             </div>
+          </div>
+
+          <motion.div 
+              initial='hidden' 
+              whileInView="reveal" 
+              transition={{ staggerChildren : 0.02 }}
+              className='text-sm text-center w-[21rem]'
+              >{descriptionChar.map((char,index) => (
+                <motion.span key={index} variants={charVariants} transition={{ duration : 0.5}} >
+                  {char}
+                </motion.span>
+              ))}
+           </motion.div>
+  
+            <div className='flex items-center gap-x-3 mt-4'>
+              <a href='https://github.com/Kaizouku14' className='flex px-8 py-2.5 gap-x-2 bg-black text-white rounded-full hover:scale-[1.05] transition-transform'
+                 target="_blank"
+                 rel="noreferrer"
+              >
+                <FiGithub size={20}/> 
+                <span className='font-semibold'>Github</span>
+              </a>
+
+              <a href='#contact' className='flex px-8 py-2.5 gap-x-2 bg-[rgb(243,243,243)] bg-opacity-100 rounded-full hover:scale-[1.05] transition-transform'>
+                <BiMessageSquareDetail size={20}/> 
+                <span className='font-semibold'>Contact</span>
+              </a>
+            </div>
         </div>
       </div>
-    </main>
+    </section>
   )
 }
 

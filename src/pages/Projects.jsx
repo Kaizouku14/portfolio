@@ -42,10 +42,8 @@ const projects = [
   },
 ]
 
-
 const Projects = () => {
    const [seeMore, setSeeMore] = useState(false);
-
    const handleSeeMoreButton = () => setSeeMore(!seeMore);
 
   return (

@@ -1,10 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FiGithub } from 'react-icons/fi'
+import ProjectModal from './ProjectModal';
 
 const ProjectCard = ({ Id, ProjectImage, Data}) => {
+  const [openDialog, setOpenDialog] = useState(false);
+
+   const handleDialog = () => {
+     setOpenDialog(!openDialog);
+   }
+
   return (
-    <div key={Id}
-       className='flex flex-col gap-y-2 h-[22rem] w-[28rem] rounded-xl p-4'>
+    <>
+     <div key={Id}
+         onClick={handleDialog}
+         className='flex flex-col gap-y-2 h-[22rem] w-[28rem] rounded-xl p-4'>
         <div className='bg-slate-900 h-72 rounded-3xl flex items-center px-5 cursor-pointer'>
         <img 
             src={ProjectImage} 
@@ -25,6 +34,11 @@ const ProjectCard = ({ Id, ProjectImage, Data}) => {
             </button>
         </div> 
     </div>
+    
+     {openDialog && (
+        <ProjectModal onClose={(e) => setOpenDialog(e)}/>
+      )}
+    </>
   )
 }
 

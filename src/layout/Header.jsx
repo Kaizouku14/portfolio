@@ -1,22 +1,6 @@
 import { motion } from "framer-motion"
 import React, { useState } from 'react'
-
-const links = [
-  { name: "Home", href: "#home" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "#contact" }
-];
-
-const menuVariants = {
-  open: { opacity: 1, scale: 1 },
-  closed: { opacity: 0, scale: 0.9 }
-};
-
-const buttonVariants = {
-  open: { rotate: 45 },
-  closed: { rotate: 0 }
-};
+import { links, menuVariants, buttonVariants } from '../utils/Data'
 
 const Header = () => {
   const [open, setOpen] = useState(false);

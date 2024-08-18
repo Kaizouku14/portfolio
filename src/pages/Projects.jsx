@@ -2,19 +2,14 @@ import React, { useState } from 'react'
 import { IoIosArrowDown,  IoIosArrowUp  } from "react-icons/io";
 import ProjectCard from '../components/ProjectCard';
 import { motion } from 'framer-motion';
-import { projects } from '../utils/Data';
-
-const cardColor = {
-  0 : 'bg-slate-900',
-  1 : 'bg-sky-600'
-}
+import { projects , cardColor} from '../utils/Data';
 
 const Projects = () => {
    const [seeMore, setSeeMore] = useState(false);
    const handleSeeMoreButton = () => setSeeMore(!seeMore);
 
   return (
-    <section id='projects' className='py-4 h-auto mx-[13rem] max-md:mx-[2rem]'>
+    <section id='projects' className='py-4 h-auto mx-[13rem] max-md:mx-[2rem] '>
       <div className='text-[2.5rem] font-bold my-10'>Projects<span className='text-sky-600 '>.</span></div>
     
       <motion.div className={`${seeMore ? 'h-auto' : 'h-[47rem]'} flex flex-wrap gap-y-10 justify-center overflow-hidden `} 
@@ -28,7 +23,7 @@ const Projects = () => {
                            Data={value.Data} 
                            ProjectLink={value.ProjectLink} 
                            CardColor={cardColor[index]}
-                           />
+              />
           ))}
       </motion.div>
 

@@ -12,21 +12,21 @@ const Carousel = ({ list }) => {
     };
 
     return (
-        <div id="controls-carousel" className="relative w-full max-md:h-[14rem] h-[30rem] flex items-center justify-center  " data-carousel="static">
+        <div id="controls-carousel" className="relative w-full max-md:h-[14rem] h-[30rem] flex items-center justify-center" data-carousel="static">
             <div className="relative">
-                {list.map((value, index) => (
-                    <div
-                        key={index}
-                        className={`${index === currentIndex ? 'block' : 'hidden'} `}
-                        data-carousel-item
-                    >
-                        <img
-                            src={value.image}
-                            className="object-contain h-[26rem] max-md:h-[20rem]"
-                            alt="projectImage"
-                        />
-                    </div>
-                ))}
+            {list.map((value, index) => (
+                <div
+                key={index}
+                className={`${index === currentIndex ? 'block' : 'hidden'}`}
+                data-carousel-item
+                >
+                <img
+                    src={value.image}
+                    className="object-contain h-[26rem] max-md:h-[20rem] "
+                    alt="projectImage"
+                />
+                </div>
+            ))}
 
             <button
                     type="button"

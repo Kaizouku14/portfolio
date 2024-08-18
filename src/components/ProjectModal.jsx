@@ -1,17 +1,18 @@
 import React, { useEffect } from 'react';
 import { BiX } from 'react-icons/bi';
 import { BsBoxArrowUpRight } from "react-icons/bs";
+import { FiGithub } from 'react-icons/fi'
 import Carousel from './Carousel';
 
-const ProjectModal = ({ onClose, ProjectInfo }) => {
+const ProjectModal = ({ onClose, ProjectInfo , ModalTheme}) => {
 
-  // useEffect(() => {
-  //   document.body.style.overflow = 'hidden';
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
 
-  //   return () => {
-  //     document.body.style.overflow = 'auto';
-  //   };
-  // }, []);
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
 
   const handleCloseModal = () => {
     onClose(false);
@@ -27,22 +28,33 @@ const ProjectModal = ({ onClose, ProjectInfo }) => {
           <BiX size={30} />
         </button>
 
-        <div className="bg-slate-900 flex-1 flex items-center justify-center lg:rounded-l-xl p-8 max-md:rounded-t-xl">
+        <div className={`${ModalTheme} flex-1 flex items-center justify-center lg:rounded-l-xl p-8 max-md:rounded-t-xl`}>
           <Carousel list={ProjectInfo.projectImages} />
         </div>
 
         <div className='flex-1 px-8 py-6 max-md:px-4 max-md:py-4 flex flex-col justify-between'>
-          <div className='text-3xl font-bold mb-4 max-md:mb-2'>{ProjectInfo.projectName}</div>
+          <div className='text-3xl font-bold max-md:mb-2'>{ProjectInfo.projectName}</div>
 
           <a
-            href="/"
-            className='flex justify-center items-center gap-x-2 bg-slate-200 w-28 p-3 rounded-md hover:bg-slate-300 transition-transform transform hover:scale-105 mb-6 max-md:mb-4'
+            href={`${ProjectInfo.project.DeployedURL || ProjectInfo.project.GitHubURL}`}
+            target="_blank"
+            rel="noreferrer"
+            className='flex justify-center items-center gap-x-2 bg-slate-200 w-28 p-3 rounded-md hover:bg-slate-300 transition-transform transform hover:scale-105 max-md:mb-4'
           >
-            <BsBoxArrowUpRight size={18} />
-            <span className='text-sm font-medium'>View</span>
+            {ProjectInfo.project.DeployedURL  ? (
+               <>
+                <BsBoxArrowUpRight size={18} />
+                <span className='text-sm font-medium'>View</span>
+               </>
+            ) : (
+              <>
+                <FiGithub size={18}/> 
+                <span className='text-sm font-medium'>Github</span>
+              </>
+            )}
           </a>
 
-          <div className='py-4 text-sm text-gray-700 leading-relaxed overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200 h-46 max-md:h-40 '>
+          <div className='py-4 text-sm text-gray-700 leading-relaxed overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200 h-auto max-md:h-40 '>
             {ProjectInfo.projectDescription}
           </div>
 

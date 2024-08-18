@@ -4,15 +4,7 @@ import { motion } from 'framer-motion'
 import { Typewriter } from 'react-simple-typewriter';
 import { FiGithub } from "react-icons/fi";
 import { BiMessageSquareDetail } from "react-icons/bi";
-
-
-const name = "Hello I'm Al-v Manda";
-const description = "A third-year BSIT student diving into the depths of web development to broaden my knowledge and skills in web development."
-
-const charVariants = {
-  hidden : { opacity : 0},
-  reveal : { opacity : 1}
-}
+import { name , description,  charVariants } from '../utils/Data'
 
 const Home = () => {
    const nameChar = splitStringUsingRegex(name);

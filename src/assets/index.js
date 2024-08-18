@@ -25,6 +25,7 @@ import mail from './mail.svg'
 import facebook from './facebook.svg'
 import tiktok from './tiktok.svg'
 import instagram from './instagram.svg'
+import firebase from './firebase.svg'
 
 export {
 javascript, 
@@ -53,5 +54,6 @@ chash,
 mail,
 facebook,
 tiktok,
-instagram
+instagram,
+firebase
 }

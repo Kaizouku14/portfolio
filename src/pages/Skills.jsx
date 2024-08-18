@@ -1,55 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { chrome, 
-css, 
-figma, 
-git, 
-github, 
-html, 
-javascript, 
-mysql, 
-node, 
-npm, 
-vscode, 
-canva,
-react, 
-typescript,
-express,
-java,
-mongodb,
-vite,
-eclipse,
-intellij,
-c,
-cplus,
-chash} from '../assets'
-
-const skills = [
-  { tech : 'HTML' , img : html },
-  { tech : 'CSS' , img : css },
-  { tech : 'JavaScript', img : javascript },
-  { tech : 'TypeScript', img : typescript },
-  { tech : 'Express.js', img : express },
-  { tech : 'React.js', img : react },
-  { tech : 'Java', img : java },
-  { tech : 'C', img : c },
-  { tech : 'C++', img : cplus},
-  { tech : 'C#', img : chash },
-  { tech : 'MongoDB', img : mongodb },
-  { tech : 'Vite', img : vite },
-  { tech : 'Eclipse', img : eclipse },
-  { tech : 'Intellij', img : intellij },
-  { tech : 'Github', img : github },
-  { tech : 'Git', img :  git },
-  { tech : 'Vscode' , img : vscode },
-  { tech : 'npm' , img : npm },
-  { tech : 'Node.js' , img : node },
-  { tech : 'MySQL' , img : mysql },
-  { tech : 'Chrome Devtools' , img : chrome },
-  { tech : 'Figma' , img : figma },  
-  { tech : 'Canva' , img : canva }, 
-]
-
+import { skills } from '../utils/Data'
 
 const Skills = () => {
   return (

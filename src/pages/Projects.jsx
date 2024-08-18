@@ -2,45 +2,12 @@ import React, { useState } from 'react'
 import { IoIosArrowDown,  IoIosArrowUp  } from "react-icons/io";
 import ProjectCard from '../components/ProjectCard';
 import { motion } from 'framer-motion';
+import { projects } from '../utils/Data';
 
-const projects = [
-  { ProjectImage : 'https://www.hostinger.ph/tutorials/wp-content/uploads/sites/2/2020/06/Help-Scout_s-homepage.png',
-    Data : {
-      projectName : 'Task Management App',
-      projectDescription : 'A task managing app for productivity'
-    }
-  },
-  { ProjectImage : 'https://www.hostinger.ph/tutorials/wp-content/uploads/sites/2/2020/06/Help-Scout_s-homepage.png',
-    Data : {
-      projectName : 'Task Management App',
-      projectDescription : 'A task managing app for productivity'
-    }
-  },
-  { ProjectImage : 'https://www.hostinger.ph/tutorials/wp-content/uploads/sites/2/2020/06/Help-Scout_s-homepage.png',
-    Data : {
-      projectName : 'Task Management App',
-      projectDescription : 'A task managing app for productivity'
-    }
-  },
-  { ProjectImage : 'https://www.hostinger.ph/tutorials/wp-content/uploads/sites/2/2020/06/Help-Scout_s-homepage.png',
-    Data : {
-      projectName : 'Task Management App',
-      projectDescription : 'A task managing app for productivity'
-    }
-  },
-  { ProjectImage : 'https://www.hostinger.ph/tutorials/wp-content/uploads/sites/2/2020/06/Help-Scout_s-homepage.png',
-    Data : {
-      projectName : 'Task Management App',
-      projectDescription : 'A task managing app for productivity'
-    }
-  },
-  { ProjectImage : 'https://www.hostinger.ph/tutorials/wp-content/uploads/sites/2/2020/06/Help-Scout_s-homepage.png',
-    Data : {
-      projectName : 'Task Management App',
-      projectDescription : 'A task managing app for productivity'
-    }
-  },
-]
+const cardColor = {
+  0 : 'bg-slate-900',
+  1 : 'bg-sky-600'
+}
 
 const Projects = () => {
    const [seeMore, setSeeMore] = useState(false);
@@ -56,7 +23,12 @@ const Projects = () => {
           transition={{ duration : 2}}
        > 
           {projects.map((value,index) => (
-              <ProjectCard key={index} ProjectImage={value.ProjectImage} Data={value.Data} />
+              <ProjectCard key={index} 
+                           ProjectImage={value.ProjectImage} 
+                           Data={value.Data} 
+                           ProjectLink={value.ProjectLink} 
+                           CardColor={cardColor[index]}
+                           />
           ))}
       </motion.div>
 

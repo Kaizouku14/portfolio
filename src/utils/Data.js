@@ -70,32 +70,29 @@ export const cardColor = {
 }
   
 export const projects = [
-    { ProjectImage : loginForm,
+    { ProjectImage : discordbot,
       Data : {
-        projectName : 'Car Rental Management',
-        projectText : 'A car-rental-app for managing rentals and inventory efficiently.',
+        projectName : 'Kai-bot',
+        projectText : 'Kai-Bot manages Discord server tasks, including muting users and tracking activity in real-time.',
         projectImages : [
-          { image : loginForm },
-          { image : signupForm },
-          { image : adminUI },
-          { image : userUI },
-          { image : rentUI },
-          { image : addCarUI },
-          { image : crud }
+          { image : discordbot1 },
+          { image : discordbot2 },
+          { image : discordbot3 },
         ],
-        projectDescription : 'This Car Rental Management application, developed as a project for OOP 2, provides a comprehensive solution for managing a car rental business. It features both admin and user interfaces, allowing administrators to manage vehicle inventory, rental transactions, and users. The app supports full CRUD (Create, Read, Update, Delete) operations, making it efficient for handling records. The application is built using Java with SQL for the database.',
+        projectDescription : 'Kai-Bot is a powerful Discord bot designed to manage server activities efficiently. It provides features such as muting and timing out users with specified durations. Additionally, Kai-Bot tracks and records the activity of every user in the server, storing this data in real-time using Firebase. Developed with Node.js and TypeScript, it ensures reliable performance and robust functionality.',
         project : { 
           DeployedURL : null,
-          GitHubURL : 'https://github.com/Kaizouku14/car-rental-management'
-         },
+          GitHubURL : 'https://github.com/Kaizouku14/kai-bot'
+        },
         projectTechnologies : [
-          { icon : java, tech : 'Java' },
-          { icon : mysql, tech : 'MySQL'}
+          { icon : typescript, tech : 'TypeScript'},
+          { icon : node , tech : 'Node.js'},
+          { icon : firebase , tech : 'Firebase'},
         ]
       },
-      ProjectLink : 'https://github.com/Kaizouku14/car-rental-management'
+      ProjectLink : 'https://github.com/Kaizouku14/kai-bot'
     }, 
-
+    
     { ProjectImage : reelhub1,
       Data : {
         projectName : 'Reel Hub',
@@ -140,6 +137,32 @@ export const projects = [
       },
       ProjectLink : 'https://github.com/Kaizouku14/recipe-finder'
     }, 
+    { ProjectImage : loginForm,
+      Data : {
+        projectName : 'Car Rental Management',
+        projectText : 'A car-rental-app for managing rentals and inventory efficiently.',
+        projectImages : [
+          { image : loginForm },
+          { image : signupForm },
+          { image : adminUI },
+          { image : userUI },
+          { image : rentUI },
+          { image : addCarUI },
+          { image : crud }
+        ],
+        projectDescription : 'This Car Rental Management application, developed as a project for OOP 2, provides a comprehensive solution for managing a car rental business. It features both admin and user interfaces, allowing administrators to manage vehicle inventory, rental transactions, and users. The app supports full CRUD (Create, Read, Update, Delete) operations, making it efficient for handling records. The application is built using Java with SQL for the database.',
+        project : { 
+          DeployedURL : null,
+          GitHubURL : 'https://github.com/Kaizouku14/car-rental-management'
+         },
+        projectTechnologies : [
+          { icon : java, tech : 'Java' },
+          { icon : mysql, tech : 'MySQL'}
+        ]
+      },
+      ProjectLink : 'https://github.com/Kaizouku14/car-rental-management'
+    }, 
+
     { ProjectImage : todolist,
       Data : {
         projectName : 'Todo-List',
@@ -158,29 +181,6 @@ export const projects = [
         ]
       },
       ProjectLink : 'https://github.com/Kaizouku14/Todo-List'
-    }, 
-
-    { ProjectImage : discordbot,
-      Data : {
-        projectName : 'Kai-bot',
-        projectText : 'Kai-Bot manages Discord server tasks, including muting users and tracking activity in real-time.',
-        projectImages : [
-          { image : discordbot1 },
-          { image : discordbot2 },
-          { image : discordbot3 },
-        ],
-        projectDescription : 'Kai-Bot is a powerful Discord bot designed to manage server activities efficiently. It provides features such as muting and timing out users with specified durations. Additionally, Kai-Bot tracks and records the activity of every user in the server, storing this data in real-time using Firebase. Developed with Node.js and TypeScript, it ensures reliable performance and robust functionality.',
-        project : { 
-          DeployedURL : null,
-          GitHubURL : 'https://github.com/Kaizouku14/kai-bot'
-         },
-        projectTechnologies : [
-          { icon : typescript, tech : 'TypeScript'},
-          { icon : node , tech : 'Node.js'},
-          { icon : firebase , tech : 'Firebase'},
-        ]
-      },
-      ProjectLink : 'https://github.com/Kaizouku14/kai-bot'
     }, 
 ]
 
